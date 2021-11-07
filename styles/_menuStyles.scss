@@ -1,32 +1,28 @@
 .content-container.menu {
-    font-size: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: space-around;
     height: 100%;
     width: 100%;
 
     .header {
         text-align: center;
-        font-size: 1rem;
+        font-size: 1em;
         text-transform: uppercase;
         height: 20%;
         @include flexCenter();
         flex-direction: column;
 
         p {
-            margin: .5em 0;
+            margin: .5em 0 0 0;
         }
 
         .header-text {
-            font-size: 1.5em;
+            font-size: 1.6em;
             line-height: 1.56em;
         }
 
         .brackets {
-            font-size: .875em;
-            line-height: .875em
+            font-size: .9em;
+            line-height: .9em;
         }
     }
 
@@ -64,4 +60,127 @@
             height: 60%;
         }
     }
+}
+
+@media screen and (max-width: map-get($breakpoints, xxs-max)) {
+    .content-container {
+        font-size: .82rem;
+    }
+}
+
+@media screen and (min-width: map-get($breakpoints, s-min)) and (max-width: map-get($breakpoints, s-max)) {
+    .content-container {
+        font-size: 1.45rem;
+
+        &.menu .options-container {
+            font-size: 1.15em;
+        }
+    }
+}
+
+@media screen and (min-width: map-get($breakpoints, m-min)) and (max-width: map-get($breakpoints, m-max)) {
+    .content-container {
+        font-size: 1.6rem;
+
+        &.menu {
+
+            width: 80%;
+            height: 90%;
+
+            .options-container {
+                font-size: 1.15em;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: map-get($breakpoints, l-min)) {
+    .container {
+        width: 60%;
+        min-height: 22rem;
+        height: 60vh;
+
+        .content-container.menu {
+
+            width: 80%;
+            height: 70%;
+
+            .options-container {
+                width: 100%;
+                flex-direction: row;
+                justify-content: space-between;
+
+                .option {
+                    width: 28%;
+                    height: 50%;
+                    justify-content: space-around;
+                    cursor: pointer;
+
+                    img {
+                        height: 50%;
+                    }
+
+                    &:last-child img {
+                        height: 44%;
+                        transform: translateY(12%);
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: map-get($breakpoints, l-min)) and (max-width: map-get($breakpoints, l-max)) {
+
+    .content-container {
+        font-size: 1rem;
+
+        &.menu {
+
+            .options-container {
+                font-size: 1em;
+            }
+        }
+    }
+
+}
+
+@media screen and (min-width: map-get($breakpoints, xl-min)) and (max-width: map-get($breakpoints, xl-max)) {
+
+    .content-container {
+        font-size: 1.2rem;
+
+        &.menu {
+
+            .options-container {
+                font-size: .9em;
+            }
+        }
+    }
+
+}
+
+@media screen and (min-width: map-get($breakpoints, xxl-min)) {
+
+    .container {
+        width: 55%;
+        min-height: 28rem;
+
+        .content-container {
+            font-size: 1.5rem;
+    
+            &.menu {
+    
+                .options-container {
+                    font-size: .9em;
+
+                    .option {
+                        height: 55%;
+                    }
+                }
+            }
+        }
+    }
+    
 }

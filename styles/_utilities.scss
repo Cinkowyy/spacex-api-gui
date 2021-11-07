@@ -1,5 +1,20 @@
-@import url(../fonts/bankgothic-regular.ttf);
+@import url(../fonts/Bankgothic-Regular.ttf);
 @import url(../fonts/Montserrat-Regular.ttf);
+
+$breakpoints: (
+    xxs-max: 374.98px,
+    xs-min: 375px,
+    xs-max: 575.98px,
+    s-min: 576px,
+    s-max: 767.98px,
+    m-min: 768px,
+    m-max: 991.98px,
+    l-min: 992px,
+    l-max: 1199.98px,
+    xl-min: 1200px,
+    xl-max: 1399.98px,
+    xxl-min: 1400px
+);
 
 @mixin flexCenter {
     display: flex;

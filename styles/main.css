@@ -1,4 +1,4 @@
-@import url(../fonts/bankgothic-regular.ttf);
+@import url(../fonts/Bankgothic-Regular.ttf);
 @import url(../fonts/Montserrat-Regular.ttf);
 body {
   height: 100vh;
@@ -42,7 +42,7 @@ body {
           align-items: center;
 }
 
-.content-container.menu {
+.content-container {
   font-size: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -54,6 +54,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.content-container.menu {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   height: 100%;
@@ -62,7 +65,7 @@ body {
 
 .content-container.menu .header {
   text-align: center;
-  font-size: 1rem;
+  font-size: 1em;
   text-transform: uppercase;
   height: 20%;
   display: -webkit-box;
@@ -81,17 +84,17 @@ body {
 }
 
 .content-container.menu .header p {
-  margin: .5em 0;
+  margin: .5em 0 0 0;
 }
 
 .content-container.menu .header .header-text {
-  font-size: 1.5em;
+  font-size: 1.6em;
   line-height: 1.56em;
 }
 
 .content-container.menu .header .brackets {
-  font-size: .875em;
-  line-height: .875em;
+  font-size: .9em;
+  line-height: .9em;
 }
 
 .content-container.menu .options-container {
@@ -147,5 +150,104 @@ body {
 
 .content-container.menu .options-container .option:last-child img {
   height: 60%;
+}
+
+@media screen and (max-width: 374.98px) {
+  .content-container {
+    font-size: .82rem;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+  .content-container {
+    font-size: 1.45rem;
+  }
+  .content-container.menu .options-container {
+    font-size: 1.15em;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+  .content-container {
+    font-size: 1.6rem;
+  }
+  .content-container.menu {
+    width: 80%;
+    height: 90%;
+  }
+  .content-container.menu .options-container {
+    font-size: 1.15em;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    width: 60%;
+    min-height: 22rem;
+    height: 60vh;
+  }
+  .container .content-container.menu {
+    width: 80%;
+    height: 70%;
+  }
+  .container .content-container.menu .options-container {
+    width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .container .content-container.menu .options-container .option {
+    width: 28%;
+    height: 50%;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    cursor: pointer;
+  }
+  .container .content-container.menu .options-container .option img {
+    height: 50%;
+  }
+  .container .content-container.menu .options-container .option:last-child img {
+    height: 44%;
+    -webkit-transform: translateY(12%);
+            transform: translateY(12%);
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+  .content-container {
+    font-size: 1rem;
+  }
+  .content-container.menu .options-container {
+    font-size: 1em;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399.98px) {
+  .content-container {
+    font-size: 1.2rem;
+  }
+  .content-container.menu .options-container {
+    font-size: .9em;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .container {
+    width: 55%;
+    min-height: 28rem;
+  }
+  .container .content-container {
+    font-size: 1.5rem;
+  }
+  .container .content-container.menu .options-container {
+    font-size: .9em;
+  }
+  .container .content-container.menu .options-container .option {
+    height: 55%;
+  }
 }
 /*# sourceMappingURL=main.css.map */
