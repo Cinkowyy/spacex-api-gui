@@ -1,7 +1,4 @@
 .content-container.menu {
-    justify-content: space-around;
-    height: 100%;
-    width: 100%;
 
     .header {
         text-align: center;
@@ -64,13 +61,13 @@
 
 @media screen and (max-width: map-get($breakpoints, xxs-max)) {
     .content-container {
-        font-size: .82rem;
+        font-size: .76rem;
     }
 }
 
 @media screen and (min-width: map-get($breakpoints, s-min)) and (max-width: map-get($breakpoints, s-max)) {
     .content-container {
-        font-size: 1.45rem;
+        font-size: 1.43rem;
 
         &.menu .options-container {
             font-size: 1.15em;
