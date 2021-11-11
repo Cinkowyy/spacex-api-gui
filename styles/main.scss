@@ -33,6 +33,13 @@ body {
     justify-content: space-around;
 }
 
+@media screen and (min-width: map-get($breakpoints, m-min)) {
+    .container.view {
+        width: 90%;
+        height: 85%;  
+    }
+}
+
 @import 'menuStyles';
 @import 'paginationStyles';
 @import 'starlinksStyles';

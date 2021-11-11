@@ -4,16 +4,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    user-select: none;
 
     img {
         height: 100%;
         text-align: center;
+        cursor: pointer;
     }
 
     div {
         height: 1.1em;
         width: 1.1em;
         @include flexCenter();
+    }
+
+    div:not(.dots) {
+        cursor: pointer;
     }
 
     .active {
