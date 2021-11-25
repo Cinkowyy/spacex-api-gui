@@ -145,6 +145,7 @@
 }
 
 @media screen and (min-width: map-get($breakpoints, m-min)) and (max-width: map-get($breakpoints, l-max)) and (orientation: portrait){ 
+    //768- 1200
     .container {
         width: 77%;
     }

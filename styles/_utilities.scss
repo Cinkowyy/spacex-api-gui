@@ -1,8 +1,7 @@
 @import url(../fonts/Bankgothic-Regular.ttf);
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap');
 
-$breakpoints: (
-    xxs-max: 374.98px,
+$breakpoints: (xxs-max: 374.98px,
     xs-min: 375px,
     xs-max: 575.98px,
     s-min: 576px,
@@ -13,11 +12,15 @@ $breakpoints: (
     l-max: 1199.98px,
     xl-min: 1200px,
     xl-max: 1399.98px,
-    xxl-min: 1400px
-);
+    xxl-min: 1400px);
 
 @mixin flexCenter {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@mixin montserrat {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0px;
 }

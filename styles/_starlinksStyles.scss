@@ -48,8 +48,7 @@
         }
 
         .row:not(.header-row) {
-            font-family: 'Montserrat', sans-serif;
-            letter-spacing: 0px;
+            @include montserrat();
             font-weight: 200;
             font-size: .75em;
             background: rgba(0, 0, 0, 0.6);

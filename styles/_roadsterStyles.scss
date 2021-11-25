@@ -1,0 +1,139 @@
+.content-container.roadster {
+
+    .header {
+        width: 80%;
+        font-size: 1.95em;
+        display: grid;
+        grid-template-columns: 15% 35% 35% 15%;
+        text-transform: uppercase;
+
+        img {
+            align-self: center;
+            cursor: pointer;
+        }
+
+        .header-text {
+            grid-column: 2/4;
+            align-self: center;
+            justify-self: center;
+            margin: .6em 0;
+            text-align: center;
+        }
+    }
+
+    .roadster-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1em;
+
+        .kilometers,
+        .launch-details div,
+        .description .content {
+            @include montserrat();
+        }
+
+        .roadster-data {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            row-gap: .8em;
+            column-gap: .2em;
+
+            p {
+                text-align: center;
+                margin: .2em 0;
+            }
+
+            .earth {
+                grid-column: 2/3;
+                grid-row: 1/2;
+            }
+
+            .distance {
+                display: flex;
+                flex-direction: column;
+
+                .icons {
+                    display: grid;
+                    grid-template-columns: 1fr .5fr 1fr;
+
+                    .arrows-icon img {
+                        transform: translateY(-50%);
+                    }
+
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    img {
+                        width: 70%;
+                    }
+                }
+
+                .kilometers {
+                    font-size: .85em;
+                    text-align: center;
+                }
+            }
+
+            .launch-info {
+                display: flex;
+                justify-content: center;
+                column-gap: .5em;
+                grid-column: 1/3;
+                align-self: center;
+
+                .launch-icon {
+                    @include flexCenter();
+                    width: 30%;
+
+                    img {
+                        width: 85%;
+                    }
+                }
+
+                .launch-details {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    row-gap: .5em;
+
+                    div {
+                        font-size: .9em;
+                        display: flex;
+                        align-items: center;
+                        column-gap: .4em;
+                    }
+                }
+            }
+        }
+
+        .images {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            column-gap: .4em;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .description {
+            font-size: .8em;
+            width: 95%;
+            margin-bottom: 1em;
+
+            .heading {
+                text-transform: uppercase;
+                font-size: 1.5em;
+            }
+
+        }
+
+    }
+}

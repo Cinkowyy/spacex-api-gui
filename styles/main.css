@@ -516,4 +516,214 @@ body {
     width: 35%;
   }
 }
+
+.content-container.roadster .header {
+  width: 80%;
+  font-size: 1.95em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 15% 35% 35% 15%;
+      grid-template-columns: 15% 35% 35% 15%;
+  text-transform: uppercase;
+}
+
+.content-container.roadster .header img {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  cursor: pointer;
+}
+
+.content-container.roadster .header .header-text {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-column: 2/4;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin: .6em 0;
+  text-align: center;
+}
+
+.content-container.roadster .roadster-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 1em;
+}
+
+.content-container.roadster .roadster-container .kilometers,
+.content-container.roadster .roadster-container .launch-details div,
+.content-container.roadster .roadster-container .description .content {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0px;
+}
+
+.content-container.roadster .roadster-container .roadster-data {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  row-gap: .8em;
+  -webkit-column-gap: .2em;
+          column-gap: .2em;
+}
+
+.content-container.roadster .roadster-container .roadster-data p {
+  text-align: center;
+  margin: .2em 0;
+}
+
+.content-container.roadster .roadster-container .roadster-data .earth {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+}
+
+.content-container.roadster .roadster-container .roadster-data .distance {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.content-container.roadster .roadster-container .roadster-data .distance .icons {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr .5fr 1fr;
+      grid-template-columns: 1fr .5fr 1fr;
+}
+
+.content-container.roadster .roadster-container .roadster-data .distance .icons .arrows-icon img {
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.content-container.roadster .roadster-container .roadster-data .distance .icons div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.content-container.roadster .roadster-container .roadster-data .distance .icons img {
+  width: 70%;
+}
+
+.content-container.roadster .roadster-container .roadster-data .distance .kilometers {
+  font-size: .85em;
+  text-align: center;
+}
+
+.content-container.roadster .roadster-container .roadster-data .launch-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-column-gap: .5em;
+          column-gap: .5em;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.content-container.roadster .roadster-container .roadster-data .launch-info .launch-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30%;
+}
+
+.content-container.roadster .roadster-container .roadster-data .launch-info .launch-icon img {
+  width: 85%;
+}
+
+.content-container.roadster .roadster-container .roadster-data .launch-info .launch-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  row-gap: .5em;
+}
+
+.content-container.roadster .roadster-container .roadster-data .launch-info .launch-details div {
+  font-size: .9em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: .4em;
+          column-gap: .4em;
+}
+
+.content-container.roadster .roadster-container .images {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -webkit-column-gap: .4em;
+          column-gap: .4em;
+}
+
+.content-container.roadster .roadster-container .images img {
+  width: 100%;
+}
+
+.content-container.roadster .roadster-container .description {
+  font-size: .8em;
+  width: 95%;
+  margin-bottom: 1em;
+}
+
+.content-container.roadster .roadster-container .description .heading {
+  text-transform: uppercase;
+  font-size: 1.5em;
+}
 /*# sourceMappingURL=main.css.map */
