@@ -137,3 +137,99 @@
 
     }
 }
+
+@media screen and (max-width: map-get($breakpoints, xxs-max)) {
+    .content-container.roadster {
+        font-size: .88rem;
+    }
+}
+
+@media screen and (min-width: map-get($breakpoints, s-min)) and (max-width: map-get($breakpoints, s-max)) {
+    .content-container.roadster {
+        font-size: 1.38rem;
+    }
+}
+
+@media screen and (min-width: map-get($breakpoints, m-min)) and (orientation: landscape), screen and (min-width: map-get($breakpoints, xl-min)) {
+
+    .content-container.roadster {
+        .roadster-container {
+            width: 90%;
+            gap: .6em;
+            padding-bottom: 1.5em;
+
+            .roadster-data {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: 1fr;
+
+                .earth {
+                    grid-column-start: 3;
+                }
+
+                .launch-info {
+                    grid-column-start: 2;
+                    flex-direction: column;
+                    align-items: center;
+                    transform: translateY(2.5em);
+
+                    .launch-icon {
+                        width: 40%;
+                        transform: translateY(-1.3em) scale(1.3);
+                    }
+
+
+                    .launch-details {
+                        row-gap: .4em;
+                    }
+
+                }
+            }
+
+            .images {
+                order: 3;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: map-get($breakpoints, m-min)) and (max-width: map-get($breakpoints, m-max)) and (orientation: portrait) {
+    //768-992
+
+    .content-container.roadster {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (min-width: map-get($breakpoints, l-min)) and (max-width: map-get($breakpoints, l-max)) and (orientation: landscape) {
+    .container.view {
+        height: 70%;
+    }
+}
+
+@media screen and (min-width: map-get($breakpoints, xl-min)) and (orientation:landscape){
+    .content-container.roadster .roadster-container {
+        width: 80%;
+
+        .images {
+            width: 75%;
+        }  
+    }
+}
+
+@media screen and (min-width: map-get($breakpoints, xl-min)) and (max-width: map-get($breakpoints, xl-max)) {
+    .content-container.roadster {
+        font-size:1.2rem;
+    }
+}
+
+@media screen and (min-width: map-get($breakpoints, xxl-min)) and (max-width: 1599.98px) {
+    .content-container.roadster {
+        font-size: 1.25rem;      
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .content-container.roadster {
+        font-size: 1.4rem;      
+    }
+}

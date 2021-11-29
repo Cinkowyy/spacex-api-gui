@@ -33,6 +33,18 @@ body {
     justify-content: space-around;
 }
 
+@media screen and (max-width: map-get($breakpoints, m-max)) and (orientation:landscape){
+    body {
+        min-height: 100vh;
+        height: auto;
+        padding: 2em 0;
+
+        .content-container.menu .options-container .option img{
+            width: 40%;
+        }
+    }
+}
+
 @media screen and (min-width: map-get($breakpoints, m-min)) {
     .container.view {
         width: 90%;

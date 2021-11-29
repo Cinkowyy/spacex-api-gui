@@ -60,6 +60,17 @@ body {
       justify-content: space-around;
 }
 
+@media screen and (max-width: 991.98px) and (orientation: landscape) {
+  body {
+    min-height: 100vh;
+    height: auto;
+    padding: 2em 0;
+  }
+  body .content-container.menu .options-container .option img {
+    width: 40%;
+  }
+}
+
 @media screen and (min-width: 768.02px) {
   .container.view {
     width: 90%;
@@ -114,6 +125,7 @@ body {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  row-gap: 1em;
   height: 80%;
   width: 90%;
   padding: 1.1em 0;
@@ -725,5 +737,100 @@ body {
 .content-container.roadster .roadster-container .description .heading {
   text-transform: uppercase;
   font-size: 1.5em;
+}
+
+@media screen and (max-width: 374.98px) {
+  .content-container.roadster {
+    font-size: .88rem;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .content-container.roadster {
+    font-size: 1.38rem;
+  }
+}
+
+@media screen and (min-width: 768.02px) and (orientation: landscape), screen and (min-width: 1200px) {
+  .content-container.roadster .roadster-container {
+    width: 90%;
+    gap: .6em;
+    padding-bottom: 1.5em;
+  }
+  .content-container.roadster .roadster-container .roadster-data {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+  }
+  .content-container.roadster .roadster-container .roadster-data .earth {
+    -ms-grid-column: 3;
+        grid-column-start: 3;
+  }
+  .content-container.roadster .roadster-container .roadster-data .launch-info {
+    -ms-grid-column: 2;
+        grid-column-start: 2;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: translateY(2.5em);
+            transform: translateY(2.5em);
+  }
+  .content-container.roadster .roadster-container .roadster-data .launch-info .launch-icon {
+    width: 40%;
+    -webkit-transform: translateY(-1.3em) scale(1.3);
+            transform: translateY(-1.3em) scale(1.3);
+  }
+  .content-container.roadster .roadster-container .roadster-data .launch-info .launch-details {
+    row-gap: .4em;
+  }
+  .content-container.roadster .roadster-container .images {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+}
+
+@media screen and (min-width: 768.02px) and (max-width: 991.98px) and (orientation: portrait) {
+  .content-container.roadster {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199.98px) and (orientation: landscape) {
+  .container.view {
+    height: 70%;
+  }
+}
+
+@media screen and (min-width: 1200px) and (orientation: landscape) {
+  .content-container.roadster .roadster-container {
+    width: 80%;
+  }
+  .content-container.roadster .roadster-container .images {
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399.98px) {
+  .content-container.roadster {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1599.98px) {
+  .content-container.roadster {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .content-container.roadster {
+    font-size: 1.4rem;
+  }
 }
 /*# sourceMappingURL=main.css.map */

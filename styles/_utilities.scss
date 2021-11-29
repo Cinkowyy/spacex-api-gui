@@ -1,7 +1,8 @@
 @import url(../fonts/Bankgothic-Regular.ttf);
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap');
 
-$breakpoints: (xxs-max: 374.98px,
+$breakpoints: (
+    xxs-max: 374.98px,
     xs-min: 375px,
     xs-max: 575.98px,
     s-min: 576px,
