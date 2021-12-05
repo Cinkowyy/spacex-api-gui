@@ -1,0 +1,88 @@
+ <!DOCTYPE html>
+ <html lang="pl">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="styles/normalize.css">
+     <link rel="stylesheet" href="styles/main.css">
+
+     <title>SpaceX GUI - Rockets Info</title>
+ </head>
+ <body>
+    
+    <div class="container view">
+       <div class="content-container rockets"> 
+            <div class="header">
+                <img src="images/arrow-left-back.svg" alt="back">
+                <p class="header-text">Rockets</p>
+            </div>
+
+            <div class="rockets-container">
+                <div class="row header-row">
+                    <p>Rocket name</p>
+                    <p class="desktop-only">Diamentions and weight</p>
+                    <p>First launch</p>
+                    <p>Status</p>
+                </div>
+
+                <div class="row-wrapper">
+                    <div class="row">
+                        <p>Falcon Heavy</p>
+                        <div class="diamentions desktop-only">
+                            <div>
+                                <p>Height: 70 m</p>
+                                <p>Diameter: 12.2 m</p>
+                            </div>
+                            <p>Mass: 1420788 kg</p>
+                        </div>
+                        <p>2018-02-06</p>
+                        <p class="status active">Active</p>
+                        <div class="arrow-down">
+                            <img src="images/arow-down.svg">
+                        </div>
+                    </div>
+
+                    <div class="details-wrapper">
+                        <div class="engine-info">
+                            <h4>Engine info</h4>
+                            <p>Thrust vacuum: 915 kN</p>
+                            <p>Type: Merlin</p>
+                            <p>Thrust to weight: 180.1</p>
+                        </div>
+                        <div class="diamentions-mobile">
+                            <h4>Diamentions</h4>
+                            <p>Height: 70 m</p>
+                            <p>Diameter: 12.2 m</p>
+                            <p>Mass: 1420788 kg</p>
+                        </div>
+                        <div class="images"></div>
+                        <div class="description-wrapper">
+                            <div class="description">
+                                <h4>Description</h4>
+                                <p>With the ability to lift into orbit over 54 metric tons (119,000 lb)--a mass equivalent to a 737 jetliner loaded with passengers, crew, luggage and fuel--Falcon Heavy can lift more than twice the payload of the next closest operational vehicle, the Delta IV Heavy, at one-third the cost.</p>
+                            </div>
+                            <p>Launch cost: $90 000 000</p>
+                        </div>
+                    </div>
+                </div>
+               
+                
+            </div>
+
+            <div class="pagination">
+                <img src="images/arrow-left.svg" alt="prev">
+                <div class="active"><span>1</span></div>
+                <div><span>2</span></div>
+                <div><span>3</span></div>
+                <div class="dots"><span>...</span></div>
+                <div><span>13</span></div>
+                <img src="images/arow-right.svg" alt="next">
+            </div>
+
+       </div>
+    </div>
+
+    <script src="scripts/app.js"></script>
+ </body>
+ </html>

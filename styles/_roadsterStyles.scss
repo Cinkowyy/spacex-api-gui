@@ -1,26 +1,5 @@
 .content-container.roadster {
 
-    .header {
-        width: 80%;
-        font-size: 1.95em;
-        display: grid;
-        grid-template-columns: 15% 35% 35% 15%;
-        text-transform: uppercase;
-
-        img {
-            align-self: center;
-            cursor: pointer;
-        }
-
-        .header-text {
-            grid-column: 2/4;
-            align-self: center;
-            justify-self: center;
-            margin: .6em 0;
-            text-align: center;
-        }
-    }
-
     .roadster-container {
         display: flex;
         flex-direction: column;
