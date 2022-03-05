@@ -18,28 +18,39 @@ export class RoadsterView {
 }
 
 export class MenuView {
-    constructor(container) {
+    constructor(container, viewsArray) {
         this.container = container;
+        this.views = viewsArray;
         this.callbacks = [];
     }
 
-    //temporary content. This method will be changed
+
     initialize() {
+
+        if(this.callbacks.length>0) {
+            this.callbacks.forEach(el => {
+                el.eventEl.removeEventListener('click', el.eventFn);
+            })
+            this.callbacks = [];
+        }
+
         //starlinks, rockets, tesla
         const options = this.container.querySelectorAll(".option");
 
-        options[0].addEventListener('click', () => {
-            window.location.replace("starlinksView.html");
-        })
+        for(let i=0; i< options.length; i++) {
 
-        options[1].addEventListener('click', () => {
-            window.location.replace("rocketsView.html");
-        })
+            const eventFunction = () => {
+                console.log(this.views[i]);
+            }
 
-        options[2].addEventListener('click', () => {
-            window.location.replace("roadsterView.html");
-        })
-        
+            options[i].addEventListener('click', eventFunction);
+
+            this.callbacks.push({
+                eventEl: options[i],
+                eventFn: eventFunction
+            })
+        }
+
         console.log("Initialized");
     }
 
