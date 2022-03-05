@@ -25,10 +25,10 @@ export default class DataHandler{
                 }
 
                 case 'roadster': {
-                    dataArray.push(new Roadster(
+                    dataArray = new Roadster(
                         jsonData.launch_date_utc, jsonData.earth_distance_km, jsonData.mars_distance_km,
                         jsonData.details, jsonData.flickr_images
-                    ))
+                    )
                     break;
                 }
 
