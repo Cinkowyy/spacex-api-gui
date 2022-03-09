@@ -12,7 +12,7 @@ export default class RoadsterView {
 
         let container = menuView.container;
 
-        let contentContainer = this.getDivElement();
+        let contentContainer = this.getContentContainer();
         const headerArrow = contentContainer.querySelector('.header img');
 
         const eventFunction = () => {
@@ -23,17 +23,16 @@ export default class RoadsterView {
         headerArrow.addEventListener('click', eventFunction);
 
         this.callback = {
-            eventEl: headerArrow,
+            eventEl: headerArrow, 
             eventFn: eventFunction
         }
        
-
         container.classList.add('view');
         container.innerHTML = '';
         container.appendChild(contentContainer);
     }
 
-    getDivElement() {
+    getContentContainer() {
 
         let date = new Date (this.roadster.launchDate);
         let dateString = this.roadster.launchDate.slice(0, 10);
