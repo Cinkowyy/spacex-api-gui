@@ -1,6 +1,8 @@
+import Pagination from "../pagination.js";
+
 export default class StarlinksView {
     constructor(data) {
-        this.starlinks = data;
+        this.pagination = new Pagination(data);
         this.callback = null;
     }
 
@@ -11,8 +13,9 @@ export default class StarlinksView {
         }
 
         let container = menuView.container;
-        let contentContainer = this.getContentContainer();
-
+        const contentContainer = this.getContentContainer();
+        const starlinksContainer = contentContainer.querySelector('.starlinks-container')
+        this.pagination.container = starlinksContainer;
 
         const headerArrow = contentContainer.querySelector('.header img');
 
@@ -105,17 +108,9 @@ export default class StarlinksView {
                     <p>June 13, 2020</p>
                 </div>
             </div>
-
-            <div class="pagination">
-                <img src="images/arrow-left.svg" alt="prev">
-                <div class="active"><span>1</span></div>
-                <div><span>2</span></div>
-                <div><span>3</span></div>
-                <div class="dots"><span>...</span></div>
-                <div><span>13</span></div>
-                <img src="images/arow-right.svg" alt="next">
-            </div>
         `;
+
+        contentContainer.appendChild(this.pagination.getPagination());
 
         return contentContainer;
     }
