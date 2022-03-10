@@ -22,7 +22,7 @@ export default class MenuView {
 
             const eventFunction = () => {
                 console.log(this.views[i]);
-                //this.views[i].render(this);
+                this.views[i].render(this);
             }
 
             options[i].addEventListener('click', eventFunction);
