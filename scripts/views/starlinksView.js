@@ -15,7 +15,11 @@ export default class StarlinksView {
         let container = menuView.container;
         const contentContainer = this.getContentContainer();
         const starlinksContainer = contentContainer.querySelector('.starlinks-container')
+
+        //sets header and container for pagination element
         this.pagination.container = starlinksContainer;
+        this.pagination.header = this.getHeaderRow();
+
         this.pagination.renderPage(1);
 
         const headerArrow = contentContainer.querySelector('.header img');
@@ -37,6 +41,7 @@ export default class StarlinksView {
         container.appendChild(contentContainer);
     }
 
+    //returns container with header, data container and pagination container;
     getContentContainer() {
 
         let contentContainer = document.createElement('div');
@@ -50,21 +55,29 @@ export default class StarlinksView {
 
         contentContainer.appendChild(header);
 
-        //needed for demo, it will be changed
-        contentContainer.innerHTML += `
-            <div class="starlinks-container">
-                <div class="row header-row">
-                    <p>ID</p>
-                    <p>Name</p>
-                    <p>Launch date</p>
-                </div>
-               
-            </div>
-        `;
+
+        const starlinksContainer = document.createElement('div');
+        starlinksContainer.classList.add('starlinks-container');
+
+        contentContainer.appendChild(starlinksContainer);
 
         contentContainer.appendChild(this.pagination.getPagination());
 
         return contentContainer;
+    }
+
+    //returns header row for data container;
+    getHeaderRow() {
+        let headerRow = document.createElement('div');
+        headerRow.classList.add('row', 'header-row');
+
+        headerRow.innerHTML = `
+            <p>ID</p>
+            <p>Name</p>
+            <p>Launch date</p>
+        `;
+
+        return headerRow;
     }
 
 }

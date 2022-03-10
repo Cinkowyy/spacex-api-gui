@@ -3,11 +3,16 @@ export default class Pagination {
         this.data = this.getSlicedData(data);
         this.currentPage = 1;
         this.pages = this.data.length;
+        this.headerElement
+        this.header;
         this.container;
     }
 
     renderPage(pageNumber) {
         const pageArray = this.data[pageNumber-1];
+
+        this.container.innerHTML = '';
+        this.container.appendChild(this.header);
 
         pageArray.forEach(el => {
             this.container.appendChild(el.render());
