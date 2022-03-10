@@ -1,7 +1,8 @@
 export default class Pagination {
     constructor(data) {
-        this.data = data;
+        this.data = this.getSlicedData(data);
         this.currentPage = 1;
+        this.pages = this.data.length;
         this.container;
     }
 
@@ -19,5 +20,13 @@ export default class Pagination {
         `;
 
         return paginationContainer;
+    }
+
+    getSlicedData(data) {
+        let slicedArray = [];
+        for(let i = 0; i< data.length; i+=10) {
+            slicedArray.push(data.slice(i, i+10));
+        }
+        return slicedArray;
     }
 }
