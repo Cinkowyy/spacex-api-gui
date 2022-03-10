@@ -61,6 +61,8 @@ class Starlink {
             <p>${this.name}</p>
             <p>${this.getFormattedDate(this.launchDate)}</p>
         `
+
+        return element;
     }
 
     getFormattedDate(date) {

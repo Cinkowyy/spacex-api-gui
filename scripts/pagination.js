@@ -6,6 +6,14 @@ export default class Pagination {
         this.container;
     }
 
+    renderPage(pageNumber) {
+        const pageArray = this.data[pageNumber-1];
+
+        pageArray.forEach(el => {
+            this.container.appendChild(el.render());
+        })
+    }
+
     getPagination() {
         let paginationContainer = document.createElement("div");
         paginationContainer.classList.add('pagination');

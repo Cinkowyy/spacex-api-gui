@@ -16,6 +16,7 @@ export default class StarlinksView {
         const contentContainer = this.getContentContainer();
         const starlinksContainer = contentContainer.querySelector('.starlinks-container')
         this.pagination.container = starlinksContainer;
+        this.pagination.renderPage(1);
 
         const headerArrow = contentContainer.querySelector('.header img');
 
@@ -57,56 +58,7 @@ export default class StarlinksView {
                     <p>Name</p>
                     <p>Launch date</p>
                 </div>
-                <div class="row">
-                    <p>2020-038T</p>
-                    <p>STARLINK-1506</p>
-                    <p>June 13, 2020</p>
-                </div>
-                <div class="row">
-                    <p>2020-038T</p>
-                    <p>STARLINK-1506</p>
-                    <p>September 16, 2020</p>
-                </div>
-                <div class="row">
-                    <p>2020-038T</p>
-                    <p>STARLINK-1506</p>
-                    <p>June 13, 2020</p>
-                </div>
-                <div class="row">
-                    <p>2020-038T</p>
-                    <p>STARLINK-1506</p>
-                    <p>June 13, 2020</p>
-                </div>
-                <div class="row">
-                    <p>2020-038T</p>
-                    <p>STARLINK-1506</p>
-                    <p>February 13, 2020</p>
-                </div>
-                <div class="row">
-                    <p>2020-038T</p>
-                    <p>STARLINK-1506</p>
-                    <p>June 13, 2020</p>
-                </div>
-                <div class="row">
-                    <p>2020-038T</p>
-                    <p>STARLINK-1506</p>
-                    <p>June 13, 2020</p>
-                </div>
-                <div class="row">
-                    <p>2020-038T</p>
-                    <p>STARLINK-1506</p>
-                    <p>November 03, 2020</p>
-                </div>
-                <div class="row">
-                    <p>2020-038T</p>
-                    <p>STARLINK-1506</p>
-                    <p>June 13, 2020</p>
-                </div>
-                <div class="row">
-                    <p>2020-038T</p>
-                    <p>STARLINK-1506</p>
-                    <p>June 13, 2020</p>
-                </div>
+               
             </div>
         `;
 
