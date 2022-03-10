@@ -18,7 +18,6 @@ export default class Pagination {
             <div><span>13</span></div>
             <img src="images/arow-right.svg" alt="next"> 
         `;
-
         return paginationContainer;
     }
 
