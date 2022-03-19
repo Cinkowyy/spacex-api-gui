@@ -8,8 +8,8 @@ export default class Pagination {
         this.container;
     }
 
-    renderPage(pageNumber) {
-        const pageArray = this.data[pageNumber-1];
+    renderPage() {
+        const pageArray = this.data[this.currentPage-1];
 
         this.container.innerHTML = '';
         this.container.appendChild(this.header);

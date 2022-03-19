@@ -20,7 +20,8 @@ export default class StarlinksView {
         this.pagination.container = starlinksContainer;
         this.pagination.header = this.getHeaderRow();
 
-        this.pagination.renderPage(1);
+        this.pagination.currentPage = 1;
+        this.pagination.renderPage();
 
         const headerArrow = contentContainer.querySelector('.header img');
 

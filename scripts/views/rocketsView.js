@@ -20,8 +20,9 @@ export default class RocketsView {
         this.pagination.container = rocketsContainer;
         this.pagination.header = this.getHeaderRow();
 
-        //here pagination will render rockets elements page
-        this.pagination.renderPage(1);
+        //render first page
+        this.pagination.currentPage = 1;
+        this.pagination.renderPage();
 
         const headerArrow = contentContainer.querySelector('.header img');
 
@@ -59,8 +60,6 @@ export default class RocketsView {
         const rocketsContainer = document.createElement('div');
         rocketsContainer.classList.add('rockets-container');
         contentContainer.appendChild(rocketsContainer);
-
-        //needed for demo, it will be changed
 
         contentContainer.appendChild(this.pagination.getPagination());
 

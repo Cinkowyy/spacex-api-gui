@@ -1,7 +1,7 @@
 export default class Rocket {
     constructor(rocketName, rocketStatus, launch, rocketHeight, rocketMass, rocketDiameter,engineThrustVacuum, engineType, engineThrustToWeight,rocketDescription,rocketLaunchCost,rocketImages) {
         this.name = rocketName;
-        this.status = rocketStatus;
+        this.status = rocketStatus ? 'Active': 'Inactive';
         this.firstLaunch = launch;
         this.height = rocketHeight;
         this.mass = rocketMass;
@@ -31,7 +31,7 @@ export default class Rocket {
                 <p>Diameter: ${this.diameter} m</p>
             </div>
             <p>${this.firstLaunch}</p>
-            <p class="status active">${this.status}</p>
+            <p class="status ${this.status.toLowerCase()}">${this.status}</p>
             <div class="arrow-down">
                 <img src="images/arow-down.svg">
             </div>

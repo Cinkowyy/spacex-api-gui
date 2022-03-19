@@ -21,7 +21,7 @@ export default class DataHandler{
                     jsonData.forEach(el => {
                         dataArray.push(new Rocket(
                             el.name, el.active, el.first_flight, el.height.meters, el.mass.kg, el.diameter.meters, 
-                            el.engines.thrust_vacuum, el.engines.type, el.engines.thrust_to_weight,
+                            el.engines.thrust_vacuum.kN, el.engines.type, el.engines.thrust_to_weight,
                             el.description, el.cost_per_launch, el.flickr_images
                         ));
                     });
