@@ -14,6 +14,17 @@ export default class Pagination {
         this.container.innerHTML = '';
         this.container.appendChild(this.header);
 
+        if(pageArray[0].engineInfo) {
+            let rowWrapper = document.createElement('div');
+            rowWrapper.classList.add("rockets-list-wrapper")
+            pageArray.forEach(el => {
+                rowWrapper.appendChild(el.render());
+            })
+
+            this.container.appendChild(rowWrapper);
+            return;
+        } 
+
         pageArray.forEach(el => {
             this.container.appendChild(el.render());
         })
