@@ -2,7 +2,7 @@ import MenuView from './views/menuView.js';
 import StarlinksView from './views/starlinksView.js';
 import RocketsView from './views/rocketsView.js';
 import RoadsterView from "./views/roadsterView.js";
-import DataHandler from './data.js';
+import DataHandler from './dataHandler.js';
 
 const container = document.querySelector(".container");
 
