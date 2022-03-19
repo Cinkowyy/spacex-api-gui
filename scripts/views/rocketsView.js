@@ -14,8 +14,13 @@ export default class RocketsView {
 
         let container = menuView.container;
         const contentContainer = this.getContentContainer();
-        const starlinksContainer = contentContainer.querySelector('.rockets-container')
-        this.pagination.container = starlinksContainer;
+        const rocketsContainer = contentContainer.querySelector('.rockets-container')
+
+        //sets header and container for pagination element
+        this.pagination.container = rocketsContainer;
+        this.pagination.header = this.getHeaderRow();
+
+        //here pagination will render rockets elements page
 
         const headerArrow = contentContainer.querySelector('.header img');
 
@@ -40,6 +45,7 @@ export default class RocketsView {
 
         let contentContainer = document.createElement('div');
         contentContainer.classList.add("content-container", "rockets");
+        
         let header = document.createElement('div');
         header.classList.add("header");
         header.innerHTML = `
@@ -48,6 +54,11 @@ export default class RocketsView {
         `;
 
         contentContainer.appendChild(header);
+
+        const rocketsContainer = document.createElement('div');
+        //rocketsContainer.classList.add('rockets-container');
+
+        contentContainer.appendChild(rocketsContainer);
 
         //needed for demo, it will be changed
         contentContainer.innerHTML += `
@@ -171,6 +182,22 @@ export default class RocketsView {
         contentContainer.appendChild(this.pagination.getPagination());
 
         return contentContainer;
+    }
+
+    //returns header row for data container;
+    getHeaderRow() {
+        let headerRow = document.createElement('div');
+        headerRow.classList.add('row', 'header-row');
+
+        headerRow.innerHTML = `
+            <p>Rocket name</p>
+            <p class="desktop-only">Diamentions and weight</p>
+            <p>First launch</p>
+            <p>Status</p>
+            <p class="invisible">1111</p>
+        `;
+
+        return headerRow;
     }
 
 }
