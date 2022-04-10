@@ -853,7 +853,7 @@ body {
   color: red;
 }
 
-.rockets-container .row .arrow-down {
+.rockets-container .row .arrow-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
