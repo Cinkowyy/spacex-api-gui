@@ -11,11 +11,13 @@ const rocketsData = await DataHandler.fetchData("rockets");
 const roadsterData = await DataHandler.fetchData("roadster");
 
 const menuView = new MenuView(container, [new StarlinksView(starlinksData), new RocketsView(rocketsData), new RoadsterView(roadsterData)]);
+const loader = document.querySelector('.loader');
 
 
 if(starlinksData.length == 0 || rocketsData.length == 0 || roadsterData.length == 0) {
-    alert("Fetching data failed")
+    loader.innerHTML = '<span class="fetch-error">Fetching data failed</span>';
 } else {
     menuView.initialize();
+    loader.classList.add('loaded');
 }
 

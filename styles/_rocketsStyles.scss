@@ -14,13 +14,19 @@
         display: none;
     }
 
-    &>div {
-        width: 100%;
-    }
-
     .row {
         display: flex;
         justify-content: space-around;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr) .25fr;
+        column-gap: 2em;
+        padding: 0 11em;
+
+        &.header-row {
+            padding: 0 calc((11em*2)/3);
+            column-gap: calc((3em*2)/3);
+        }
+        
 
         .status.active {
             color: rgba(5, 255, 0, 87%);
@@ -152,6 +158,40 @@
             font-size: 1.08em;
         }
 
+        .row {
+            padding: 0 1em;
+            column-gap: .2;
+    
+            &.header-row {
+                padding: 0 calc((1em*2)/3);
+                column-gap: calc((.2em*2)/3);
+            }
+        }   
+
+    }
+
+}
+
+@media screen and (min-width: map-get($breakpoints, xs-min)) and (max-width: map-get($breakpoints, xs-max)) {
+
+    .rockets-container {
+        .row {
+            padding: 0 1em;
+            column-gap: .2;
+    
+            &.header-row {
+                padding: 0 calc((1em*2)/3);
+                column-gap: calc((.2em*2)/3);
+            }
+        }   
+
+    }
+}
+
+@media screen and (max-width: map-get($breakpoints, s-max)) {
+
+    .rockets-container .row {
+        grid-template-columns: repeat(3,1fr) 0.2fr;
     }
 
 }
@@ -168,6 +208,16 @@
                 font-size: 1.4em;
             }
         }
+
+        .row {
+            padding: 0 3em;
+            column-gap: 1;
+    
+            &.header-row {
+                padding: 0 calc((4em*2)/3);
+                column-gap: calc((1em*2)/3);
+            }
+        }   
 
     }
 }
@@ -195,7 +245,10 @@
                 grid-template-rows: 1fr;
                 width: 86%;
                 align-self: center;
-                padding: 1em 0;
+                
+                &.open {
+                    padding: 1em 0;
+                }
             }
 
             .engine-info {
