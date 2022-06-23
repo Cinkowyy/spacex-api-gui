@@ -1,10 +1,11 @@
 .pagination {
-  width: 100%;
+  width: 100% !important;
   font-size: 1.45em;
   display: flex;
   justify-content: center;
   align-items: center;
   user-select: none;
+  column-gap: 0.25em;
 
   img {
     height: 100%;
@@ -13,8 +14,8 @@
   }
 
   div {
-    height: 1.1em;
-    width: 1.1em;
+    width: 1.8em;
+    aspect-ratio: 1;
     @include flexCenter();
   }
 

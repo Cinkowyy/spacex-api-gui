@@ -40,15 +40,54 @@ export default class Pagination {
 
       return paginationContainer;
     }
-    paginationContainer.innerHTML = `
-            <img src="images/arrow-left.svg" alt="prev">
-            <div class="active"><span>1</span></div>
-            <div><span>2</span></div>
-            <div><span>3</span></div>
+
+    if (this.pages - this.currentPage >= 4) {
+      paginationContainer.innerHTML = `
+            ${
+              this.currentPage == 1
+                ? ""
+                : '<img src="images/arrow-left.svg" alt="prev">'
+            }
+            <div class="active"><span>${this.currentPage}</span></div>
+            <div><span>${this.currentPage + 1}</span></div>
+            <div><span>${this.currentPage + 2}</span></div>
             <div class="dots"><span>...</span></div>
-            <div><span>13</span></div>
-            <img src="images/arow-right.svg" alt="next"> 
+            <div><span>${this.pages}</span></div>
+            ${
+              this.currentPage == this.pages
+                ? ""
+                : '<img src="images/arow-right.svg" alt="next">'
+            }
         `;
+
+      return paginationContainer;
+    }
+
+    paginationContainer.innerHTML = `
+            ${
+              this.currentPage == 1
+                ? ""
+                : '<img src="images/arrow-left.svg" alt="prev">'
+            }
+            <div ${
+              this.pages - 3 == this.currentPage ? ' class="active"' : ""
+            }><span>${this.pages - 3}</span></div>
+            <div${
+              this.pages - 2 == this.currentPage ? ' class="active"' : " "
+            }><span>${this.pages - 2}</span></div>
+            <div${
+              this.pages - 1 == this.currentPage ? ' class="active"' : " "
+            }><span>${this.pages - 1}</span></div>
+            <div${
+              this.pages == this.currentPage ? ' class="active"' : " "
+            }><span>${this.pages}</span></div>
+            ${
+              this.currentPage == this.pages
+                ? ""
+                : '<img src="images/arow-right.svg" alt="next">'
+            }
+        `;
+
     return paginationContainer;
   }
 

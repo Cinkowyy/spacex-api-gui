@@ -3,7 +3,7 @@
 body {
   height: 100vh;
   width: 100%;
-  font-family: 'bankgothic', sans-serif;
+  font-family: "bankgothic", sans-serif;
   letter-spacing: -2px;
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.42)), to(rgba(0, 0, 0, 0.42))), url(../images/background.jpg);
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)), url(../images/background.jpg);
@@ -73,7 +73,7 @@ body {
       align-self: center;
   -ms-grid-column-align: center;
       justify-self: center;
-  margin: .3em 0;
+  margin: 0.3em 0;
   text-align: center;
 }
 
@@ -256,7 +256,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  row-gap: .6em;
+  row-gap: 0.6em;
 }
 
 @media screen and (max-width: 991.98px) and (orientation: landscape) {
@@ -499,7 +499,7 @@ body {
 }
 
 .pagination {
-  width: 100%;
+  width: 100% !important;
   font-size: 1.45em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -514,6 +514,8 @@ body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  -webkit-column-gap: 0.25em;
+          column-gap: 0.25em;
 }
 
 .pagination img {
@@ -523,8 +525,8 @@ body {
 }
 
 .pagination div {
-  height: 1.1em;
-  width: 1.1em;
+  width: 1.8em;
+  aspect-ratio: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
