@@ -1,44 +1,38 @@
 export default class MenuView {
-    constructor(container, viewsArray) {
-        this.container = container;
-        this.views = viewsArray;
-        this.callbacks = [];
+  constructor(container, viewsArray) {
+    this.container = container;
+    this.views = viewsArray;
+    this.callbacks = [];
+  }
+
+  initialize() {
+    if (this.callbacks.length > 0) {
+      this.callbacks.forEach((el) => {
+        el.eventEl.removeEventListener("click", el.eventFn);
+      });
+      this.callbacks = [];
     }
 
+    //starlinks, rockets, tesla
+    const options = this.container.querySelectorAll(".option");
 
-    initialize() {
+    for (let i = 0; i < options.length; i++) {
+      const eventFunction = () => {
+        this.views[i].render(this);
+      };
 
-        if(this.callbacks.length>0) {
-            this.callbacks.forEach(el => {
-                el.eventEl.removeEventListener('click', el.eventFn);
-            })
-            this.callbacks = [];
-        }
+      options[i].addEventListener("click", eventFunction);
 
-        //starlinks, rockets, tesla
-        const options = this.container.querySelectorAll(".option");
-
-        for(let i=0; i< options.length; i++) {
-
-            const eventFunction = () => {
-                console.log(this.views[i]);
-                this.views[i].render(this);
-            }
-
-            options[i].addEventListener('click', eventFunction);
-
-            this.callbacks.push({
-                eventEl: options[i],
-                eventFn: eventFunction
-            })
-        }
-
-        console.log("Initialized");
+      this.callbacks.push({
+        eventEl: options[i],
+        eventFn: eventFunction,
+      });
     }
+  }
 
-    render() {
-        this.container.classList.remove("view");
-        this.container.innerHTML = `
+  render() {
+    this.container.classList.remove("view");
+    this.container.innerHTML = `
         <div class="content-container menu">
             <div class="header">
                 <p class="header-text">Welcome to spacex</p>
@@ -61,6 +55,6 @@ export default class MenuView {
                     <div class="option-label">Tesla car</div>
                 </div>
             </div>
-       </div>`
-    }
+       </div>`;
+  }
 }

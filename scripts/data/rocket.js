@@ -1,61 +1,72 @@
 export default class Rocket {
-    constructor(rocketName, rocketStatus, launch, rocketHeight, rocketMass, rocketDiameter,engineThrustVacuum, engineType, engineThrustToWeight,rocketDescription,rocketLaunchCost,rocketImages) {
-        this.name = rocketName;
-        this.status = rocketStatus ? 'Active': 'Inactive';
-        this.firstLaunch = launch;
-        this.height = rocketHeight;
-        this.mass = rocketMass;
-        this.diameter = rocketDiameter;
-        this.engineInfo = {
-            thrustVacuum: engineThrustVacuum,
-            type: engineType,
-            thrustToWeight: engineThrustToWeight
-        }
-        this.description = rocketDescription;
-        this.launchCost = rocketLaunchCost;
-        this.images = rocketImages;
-        this.callbacks = [];
+  constructor(
+    rocketName,
+    rocketStatus,
+    launch,
+    rocketHeight,
+    rocketMass,
+    rocketDiameter,
+    engineThrustVacuum,
+    engineType,
+    engineThrustToWeight,
+    rocketDescription,
+    rocketLaunchCost,
+    rocketImages
+  ) {
+    this.name = rocketName;
+    this.status = rocketStatus ? "Active" : "Inactive";
+    this.firstLaunch = launch;
+    this.height = rocketHeight;
+    this.mass = rocketMass;
+    this.diameter = rocketDiameter;
+    this.engineInfo = {
+      thrustVacuum: engineThrustVacuum,
+      type: engineType,
+      thrustToWeight: engineThrustToWeight,
+    };
+    this.description = rocketDescription;
+    this.launchCost = rocketLaunchCost;
+    this.images = rocketImages;
+    this.callbacks = [];
+  }
+
+  render() {
+    if (this.callbacks.length > 0) {
+      this.callbacks.forEach((el) => {
+        el.eventEl.removeEventListener("click", el.eventFn);
+      });
+      this.callbacks = [];
     }
 
-    render() {
+    let rowElement = this.getRowElement();
+    const arrowBtn = rowElement.querySelector(".arrow-btn");
+    const details = rowElement.querySelector(".details-wrapper");
 
-        if(this.callbacks.length >0) {
-            this.callbacks.forEach(el => {
-                el.eventEl.removeEventListener('click', el.eventFn);
-            })
-            this.callbacks = [];
-        }
+    const openDetails = () => {
+      if (details.classList.contains("open")) {
+        details.classList.remove("open");
+        arrowBtn.querySelector("img").src = "images/arrow-down.svg";
+      } else {
+        details.classList.add("open");
+        arrowBtn.querySelector("img").src = "images/arrow-up.svg";
+      }
+    };
 
-        let rowElement = this.getRowElement();
-        const arrowBtn = rowElement.querySelector('.arrow-btn');
-        const details = rowElement.querySelector('.details-wrapper');
+    arrowBtn.addEventListener("click", openDetails);
 
-        const openDetails = () => {
-            if(details.classList.contains('open')) {
-                details.classList.remove('open');
-                arrowBtn.querySelector('img').src = "images/arow-down.svg";
-            } else {
-                details.classList.add('open');
-                arrowBtn.querySelector('img').src = "images/arow-up.svg";
-            }
-        }
+    this.callbacks.push({
+      eventFn: openDetails,
+      eventEl: arrowBtn,
+    });
 
-        arrowBtn.addEventListener('click', openDetails);
+    return rowElement;
+  }
 
-        this.callbacks.push({
-            eventFn: openDetails,
-            eventEl: arrowBtn
-        })
+  getRowElement() {
+    let element = document.createElement("div");
+    element.classList.add("row-wrapper");
 
-
-        return rowElement;
-    }
-
-    getRowElement() {
-        let element = document.createElement('div');
-        element.classList.add('row-wrapper');
-
-        element.innerHTML = `
+    element.innerHTML = `
         <div class="row">
             <p>${this.name}</p>
             <div class="diamentions desktop-only">
@@ -68,7 +79,7 @@ export default class Rocket {
             <p>${this.firstLaunch}</p>
             <p class="status ${this.status.toLowerCase()}">${this.status}</p>
             <div class="arrow-btn">
-                <img src="images/arow-down.svg">
+                <img src="images/arrow-down.svg">
             </div>
         </div>
 
@@ -97,8 +108,8 @@ export default class Rocket {
                 <p>Launch cost: $${this.launchCost}</p>
             </div>
         </div>
-        `
+        `;
 
-        return element;
-    }
+    return element;
+  }
 }

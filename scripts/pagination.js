@@ -28,6 +28,68 @@ export default class Pagination {
     pageArray.forEach((el) => {
       this.container.appendChild(el.render());
     });
+
+    this.rerenderPagination();
+  }
+
+  rerenderPagination() {
+    let oldPagination = this.container.parentNode.querySelector(".pagination");
+    if (oldPagination) {
+      this.container.parentNode.removeChild(oldPagination);
+    }
+    let newPagination = this.getPagination();
+    this.container.parentNode.appendChild(newPagination);
+  }
+
+  getPaginationElement(number, active) {
+    let div = document.createElement("div");
+    if (active) div.classList.add("active");
+    let span = document.createElement("span");
+    span.textContent = number;
+    div.appendChild(span);
+
+    if (!active) {
+      div.addEventListener("click", () => {
+        this.currentPage = number;
+        this.renderPage();
+        this.rerenderPagination();
+      });
+    }
+
+    return div;
+  }
+
+  getPaginationArrow(direction) {
+    let arrow = document.createElement("img");
+    arrow.src = `images/arrow-${direction}.svg`;
+
+    if (direction == "left") {
+      arrow.addEventListener("click", () => {
+        this.currentPage -= 1;
+        this.renderPage();
+        this.rerenderPagination();
+      });
+
+      return arrow;
+    }
+
+    arrow.addEventListener("click", () => {
+      this.currentPage += 1;
+      this.renderPage();
+      this.rerenderPagination();
+    });
+
+    return arrow;
+  }
+
+  getPaginationDots() {
+    let dotsDiv = document.createElement("div");
+    dotsDiv.classList.add("dots");
+    let span = document.createElement("span");
+    span.textContent = "...";
+    dotsDiv.appendChild(span);
+
+    return dotsDiv;
   }
 
   getPagination() {
@@ -35,58 +97,71 @@ export default class Pagination {
     paginationContainer.classList.add("pagination");
 
     if (this.pages == 1) {
-      paginationContainer.innerHTML = `
-            <div class="active"><span>1</span></div>`;
+      paginationContainer.appendChild(this.getPaginationElement(1, true));
 
       return paginationContainer;
     }
 
+    //pagination with dots
     if (this.pages - this.currentPage >= 4) {
-      paginationContainer.innerHTML = `
-            ${
-              this.currentPage == 1
-                ? ""
-                : '<img src="images/arrow-left.svg" alt="prev">'
-            }
-            <div class="active"><span>${this.currentPage}</span></div>
-            <div><span>${this.currentPage + 1}</span></div>
-            <div><span>${this.currentPage + 2}</span></div>
-            <div class="dots"><span>...</span></div>
-            <div><span>${this.pages}</span></div>
-            ${
-              this.currentPage == this.pages
-                ? ""
-                : '<img src="images/arow-right.svg" alt="next">'
-            }
-        `;
+      //array of pagination elements
+      let paginationElementsArray = [
+        this.getPaginationElement(this.currentPage, true),
+        this.getPaginationElement(this.currentPage + 1, false),
+        this.getPaginationElement(this.currentPage + 2, false),
+        this.getPaginationDots(),
+        this.getPaginationElement(this.pages, false),
+      ];
+
+      //optional left arrow
+      if (this.currentPage != 1)
+        paginationContainer.appendChild(this.getPaginationArrow("left"));
+
+      //render pagination elements
+      paginationElementsArray.forEach((element) => {
+        paginationContainer.appendChild(element);
+      });
+
+      //right arrow
+      paginationContainer.appendChild(this.getPaginationArrow("right"));
 
       return paginationContainer;
     }
 
-    paginationContainer.innerHTML = `
-            ${
-              this.currentPage == 1
-                ? ""
-                : '<img src="images/arrow-left.svg" alt="prev">'
-            }
-            <div ${
-              this.pages - 3 == this.currentPage ? ' class="active"' : ""
-            }><span>${this.pages - 3}</span></div>
-            <div${
-              this.pages - 2 == this.currentPage ? ' class="active"' : " "
-            }><span>${this.pages - 2}</span></div>
-            <div${
-              this.pages - 1 == this.currentPage ? ' class="active"' : " "
-            }><span>${this.pages - 1}</span></div>
-            <div${
-              this.pages == this.currentPage ? ' class="active"' : " "
-            }><span>${this.pages}</span></div>
-            ${
-              this.currentPage == this.pages
-                ? ""
-                : '<img src="images/arow-right.svg" alt="next">'
-            }
-        `;
+    //pagination without dots
+
+    //optional left arrow
+    if (this.currentPage != 1)
+      paginationContainer.appendChild(this.getPaginationArrow("left"));
+
+    //render pagination elements
+    paginationContainer.appendChild(
+      this.pages - 3 == this.currentPage
+        ? this.getPaginationElement(this.pages - 3, true)
+        : this.getPaginationElement(this.pages - 3, false)
+    );
+
+    paginationContainer.appendChild(
+      this.pages - 2 == this.currentPage
+        ? this.getPaginationElement(this.pages - 2, true)
+        : this.getPaginationElement(this.pages - 2, false)
+    );
+
+    paginationContainer.appendChild(
+      this.pages - 1 == this.currentPage
+        ? this.getPaginationElement(this.pages - 1, true)
+        : this.getPaginationElement(this.pages - 1, false)
+    );
+
+    paginationContainer.appendChild(
+      this.pages == this.currentPage
+        ? this.getPaginationElement(this.pages, true)
+        : this.getPaginationElement(this.pages, false)
+    );
+
+    //optional right arrow
+    if (this.currentPage != this.pages)
+      paginationContainer.appendChild(this.getPaginationArrow("right"));
 
     return paginationContainer;
   }
