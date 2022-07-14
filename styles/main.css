@@ -525,7 +525,7 @@ body {
 }
 
 .pagination div {
-  width: 1.8em;
+  min-width: 1.9em;
   aspect-ratio: 1;
   display: -webkit-box;
   display: -ms-flexbox;
