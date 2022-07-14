@@ -26,4 +26,4 @@ Link: https://github.com/r-spacex/SpaceX-API
 <br/>
 <br/>
 <br/>
-<img src="screenshots\testaView.png" style="zoom: 67%;"/>*Roadster View*
+<img src="screenshots\teslaView.png" style="zoom: 67%;"/>*Roadster View*
