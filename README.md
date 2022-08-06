@@ -4,7 +4,7 @@
 ## General information
 App displays list of starlinks, rockets and information about Tesla Roadster launched into space. The starlink list has a pagination of 10 elements per page.
 
-APP fetch data from the SpaceX API
+App fetch data from the SpaceX API <br/>
 Link: https://github.com/r-spacex/SpaceX-API
 
 ## Technologies Used
